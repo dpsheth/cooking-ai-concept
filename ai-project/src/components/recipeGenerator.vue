@@ -32,7 +32,7 @@
       </div>
       <div class="suggestion-container">
         <input type="text" v-model="suggestion" placeholder="Add a suggestion to modify the recipe..." />
-        <button @click="modifyRecipe">Modify Recipe</button>
+        <button class = "modify-recipe-btn" @click="modifyRecipe">Modify Recipe</button>
       </div>
     </div>
   </div>
@@ -219,6 +219,23 @@ input[type="text"]:focus {
   transform: scale(1.05);
 }
 
+button.modify-recipe-btn {
+  padding: 12px 25px;
+  background-color: #FF6F00;
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+button.modify-recipe-btn:hover {
+  background-color: #E65100;
+  transform: scale(1.05);
+}
+
 .checkbox-item {
   display: flex;
   align-items: center;
@@ -274,5 +291,22 @@ input[type="text"]:focus {
   font-size: 1.1em;
   color: #333;
   margin: 10px 0;
+}
+
+.recipe-box {
+  white-space: pre-wrap; /* Preserve spaces and line breaks */
+  word-wrap: break-word; /* Wrap long words */
+  max-height: 400px; /* Limit box height */
+  overflow-y: auto; /* Add scroll if needed */
+  padding: 15px;
+  background-color: #f9f9f9; /* Light gray for readability */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.6; /* Space between lines */
+}
+
+.recipe-box > div {
+  margin-bottom: 10px; /* Spacing between each line */
 }
 </style>
